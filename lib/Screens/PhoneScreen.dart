@@ -1,11 +1,12 @@
-import 'package:aon_project_0/VerifyPhone.dart';
+import 'package:aon_project_0/Screens/VerifyPhone.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:get/get.dart';
-import 'Controller.dart';
-import 'controllers/phone_number.dart';
-import 'custom_widget.dart';
+
+import '../controllers/phone_number.dart';
+import '../custom_widget/stepprogress_widget.dart';
+
 class PhoneScreen extends StatefulWidget {
   @override
   _PhoneScreenState createState() => _PhoneScreenState();
@@ -71,9 +72,9 @@ class _PhoneScreenState extends State<PhoneScreen> {
           ),
               Row(
                 children: [
-                  // Country Code TextField (smaller)
+
                   Container(
-                    width: 95, // Set width for the country code field
+                    width: 95,
                     child: TextFormField(
 
                       keyboardType: TextInputType.number,
@@ -81,12 +82,12 @@ class _PhoneScreenState extends State<PhoneScreen> {
 
                         hintText: "+964",hintStyle: TextStyle(color: Colors.black,fontSize: 15),
                         prefixIcon: Padding(
-                          padding: const EdgeInsets.only(left:5,right: 10 ,bottom: 0 ), // Optional: Adjust padding
+                          padding: const EdgeInsets.only(left:5,right: 10 ,bottom: 0 ),
                           child: Image.asset(
                             'assets/image/iraq.png',
-                            width: 5, // Adjust width as needed
+                            width: 5,
                             height: 2,
-                           // fit: BoxFit.contain,
+
                           ),
                         ),
                         border: OutlineInputBorder(
@@ -97,15 +98,14 @@ class _PhoneScreenState extends State<PhoneScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 16), // Space between country code and phone number fields
-                  // Phone Number TextField
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Obx(() => TextFormField(
                       controller: TextEditingController(text: _phoneController.phoneNumber.value),
                       keyboardType: TextInputType.phone,
                       onChanged: (value) {
                         _phoneController.phoneNumber.value = value;
-                        _phoneController.validatePhoneNumber(); // Validate phone number
+                        _phoneController.validatePhoneNumber();
                       },
                       decoration: InputDecoration(
                         hintText: "Enter Your Phone Number",
@@ -119,14 +119,16 @@ class _PhoneScreenState extends State<PhoneScreen> {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
-                          borderSide: BorderSide(color: Color(0xFF3C97AF)),
+                          borderSide: BorderSide(color: Color(0xFF3C97AF)
+                          ),
                         ),
                         errorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide(color: Colors.red),
                         ),
                       ),
-                    )),
+                    )
+                    ),
                   ),
               ]
               ),
@@ -143,7 +145,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                     ),
                     backgroundColor: _phoneController.isButtonEnabled.value
                         ? Color(0xFF3C97AF)
-                        : Colors.grey, // Button color based on validation
+                        : Colors.grey,
                   ),
                   onPressed: _phoneController.isButtonEnabled.value
                       ? () {
@@ -152,7 +154,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                     print("Country Code: $countryCode, Phone Number: $phoneNumber");
                     Get.to(Verifyphone());
                   }
-                      : null, // Disable the button if phone number is invalid
+                      : null,
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -167,36 +169,6 @@ class _PhoneScreenState extends State<PhoneScreen> {
                   ),
                 )),
               ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             ],
           ),

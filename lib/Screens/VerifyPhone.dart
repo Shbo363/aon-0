@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:aon_project_0/PhoneScreen.dart';
+import 'package:aon_project_0/Screens/PhoneScreen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 
-import 'custom_widget.dart';
+
+import '../custom_widget/countdown_widget.dart';
+import '../custom_widget/stepprogress_widget.dart';
 class Verifyphone extends StatefulWidget {
   const Verifyphone({super.key});
 
@@ -14,6 +16,9 @@ class Verifyphone extends StatefulWidget {
 class _VerifyphoneState extends State<Verifyphone> {
   @override
   Widget build(BuildContext context) {
+    MediaQueryData queryData;
+    queryData = MediaQuery.of(context);
+
     return Scaffold( backgroundColor: Colors.white,
     appBar: AppBar(
     backgroundColor: Colors.white,
@@ -28,7 +33,7 @@ class _VerifyphoneState extends State<Verifyphone> {
     const SizedBox(height: 30,),
 
     Padding(
-    padding: const EdgeInsets.only(left: 0,right: 50),
+    padding: const EdgeInsets.only(left: 0,right: 10),
     child: Text(
     'Verify phone number'
     ,
@@ -40,10 +45,10 @@ class _VerifyphoneState extends State<Verifyphone> {
     ),
     const SizedBox(height: 8,),
     Padding(
-    padding: const EdgeInsets.only(left: 0,right: 125),
+    padding: const EdgeInsets.only(left: 0,right: 90),
     child: Text(
     'Enter the verification code sent to\n '
-        '+9647700000000 via WhatsApp\n',
+        '+9647_________ via WhatsApp\n',
 
 
     style: GoogleFonts.poppins(
@@ -51,22 +56,8 @@ class _VerifyphoneState extends State<Verifyphone> {
     color: Colors.grey[600],
     ),
     ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ),const SizedBox(height: 30,),
+    ),
+      const SizedBox(height: 30,),
       Pinput(
         length:6,
         defaultPinTheme: PinTheme(
@@ -94,7 +85,7 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
   ],
 ),
       const SizedBox(height: 16),
-      // Text and Resend button
+
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -107,7 +98,7 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
           ),
           TextButton(
             onPressed: () {
-              // Handle resend action
+
               print("Resend button clicked");
             },
             child: Text(
@@ -120,7 +111,7 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
             ),
           ),
         ],
-      ),const SizedBox(height: 50,),
+      ),const SizedBox(height: 180,),
 
 
       SizedBox(height: 50,width: 345,
@@ -133,15 +124,15 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
               ),
               backgroundColor:
               const Color(0xFF3C97AF)
-            // Button color based on selection
+
           ),
           onPressed:
               () {
-            // Perform action on Next
+
           },
-          // Disable if no option is selected
+
           child: Row(
-            mainAxisSize: MainAxisSize.min, // Make the row fit its content
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 "Verify",

@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../link.api.dart';
-import '../service.api.dart';
+import '../service/link.api.dart';
+import '../service/service.api.dart';
 
 class AuthController extends GetxController {
   Crud fun = Crud();
@@ -21,14 +21,14 @@ class AuthController extends GetxController {
   }
 
 
-  // future for register user
+
   Future register() async {
     Map data = {
       "name": name.text,
       "email": email.text,
       "pass": pass.text,
     };
-    var response = await fun.postRequest(linkRigster, data);
+    var response = await fun.postRequest(LinkApi.register, data);
     return response;
   }
 }

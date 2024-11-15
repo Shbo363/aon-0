@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
-
-import 'custom_widget.dart';
+import '../custom_widget/stepprogress_widget.dart';
+import  '../custom_widget/stepprogress_widget.dart';
 
 class Registerscreen extends StatefulWidget {
   const Registerscreen({super.key});
@@ -79,11 +79,7 @@ class _RegisterscreenState extends State<Registerscreen> {
                 ),
 
 
-                      // Country Code TextField (smaller)
 
-                       // Space between country code and phone number fields
-
-                      // Phone Number TextField
 
                 SizedBox(height: 48,width: 385,
 
@@ -96,26 +92,26 @@ class _RegisterscreenState extends State<Registerscreen> {
                               hintText:"Enter your Full name",
                               hintStyle: TextStyle(
                                 color: Color(0xFFD9D9D9),
-                                // Set your desired hint text color here
+
                               ),
 
 
 
-                              // labelText: "Phone Number",
+
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(color:Color(0xFF3C97AF)), // Default border color
+                                borderSide: BorderSide(color:Color(0xFF3C97AF)),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(color: Color(0xFF3C97AF)), // Border color when focused
+                                borderSide: BorderSide(color: Color(0xFF3C97AF)),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(color: Colors.red), // Border color when there’s an error
+                                borderSide: BorderSide(color: Colors.red),
                               ),
                             ),
                           )
@@ -143,26 +139,26 @@ class _RegisterscreenState extends State<Registerscreen> {
                         decoration: InputDecoration(
                           hintText:"Enter your Email Address",
                           hintStyle: TextStyle(
-                            color: Color(0xFFD9D9D9), // Set your desired hint text color here
+                            color: Color(0xFFD9D9D9),
                           ),
 
 
 
-                          // labelText: "Phone Number",
+
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(color: Color(0xFF3C97AF)), // Default border color
+                            borderSide: BorderSide(color: Color(0xFF3C97AF)),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(color: Color(0xFF3C97AF)), // Border color when focused
+                            borderSide: BorderSide(color: Color(0xFF3C97AF)),
                           ),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(color: Colors.red), // Border color when there’s an error
+                            borderSide: BorderSide(color: Colors.red),
                           ),
                         ),
                       )
@@ -188,10 +184,10 @@ class _RegisterscreenState extends State<Registerscreen> {
                         validator: (value) => value!.isEmpty ? 'Enter Your Password' : null,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          //suffixIcon:
+
                           hintText:"Enter Password",
                           hintStyle: TextStyle(
-                            color: Color(0xFFD9D9D9), // Set your desired hint text color here
+                            color: Color(0xFFD9D9D9),
                           ),
 
 
@@ -202,15 +198,17 @@ class _RegisterscreenState extends State<Registerscreen> {
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(color: Color(0xFF3C97AF)), // Default border color
+                            borderSide: BorderSide(color: Color(0xFF3C97AF)
+                            ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(color: Color(0xFF3C97AF)), // Border color when focused
+                            borderSide: BorderSide(color: Color(0xFF3C97AF)
+                            ),
                           ),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide(color: Colors.red), // Border color when there’s an error
+                            borderSide: BorderSide(color: Colors.red),
                           ),
                         ),
                       )
@@ -234,16 +232,16 @@ class _RegisterscreenState extends State<Registerscreen> {
                         ),
                         backgroundColor:
                         const Color(0xFF3C97AF)
-                      // Button color based on selection
+
                     ),
                     onPressed:
                         () {
-                      // Perform action on Next
+
 
                     },
-                    // Disable if no option is selected
+
                     child: Row(
-                      mainAxisSize: MainAxisSize.min, // Make the row fit its content
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
                           "Complete registration",
