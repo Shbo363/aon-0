@@ -13,7 +13,6 @@ class OptionCard extends StatelessWidget {
     required this.icon,
     required this.onTap,
     this.isSelected = false,
-
   });
 
   @override
@@ -21,7 +20,8 @@ class OptionCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 90,width: 400,
+        height: 90,
+        width: 400,
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -43,7 +43,6 @@ class OptionCard extends StatelessWidget {
                   style: GoogleFonts.roboto(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-
                   ),
                 ),
                 SizedBox(height: 4),
@@ -52,7 +51,6 @@ class OptionCard extends StatelessWidget {
                   style: GoogleFonts.roboto(
                     fontSize: 14,
                     color: Colors.grey[600],
-
                   ),
                 ),
               ],

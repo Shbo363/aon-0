@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+
 class CustomStepProgress extends StatelessWidget {
   final int totalSteps;
   final int currentStep;
@@ -16,7 +17,7 @@ class CustomStepProgress extends StatelessWidget {
     this.unselectedSize = 7,
     this.selectedColor = const Color(0xFF3C97AF),
     this.unselectedColor = const Color(0xFFBFBFBF),
-    this.padding =4,
+    this.padding = 4,
   }) : super(key: key);
 
   @override

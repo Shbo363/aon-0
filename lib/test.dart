@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 
-class TaskScreen extends StatelessWidget {
+class TaskScreen extends StatefulWidget {
+  @override
+  State<TaskScreen> createState() => _TaskScreenState();
+}
+
+class _TaskScreenState extends State<TaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Project Name'),
         actions: [
-          IconButton(
-            icon: Icon(Icons.notifications),
-            onPressed: () {},
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: IconButton(
+              icon: Icon(Icons.notifications_none_outlined,size: 30,),
+              onPressed: () {},
+            ),
           ),
         ],
       ),
@@ -22,7 +31,7 @@ class TaskScreen extends StatelessWidget {
           children: [
             Text(
               'Task 1',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 4),
             Text(
@@ -46,38 +55,52 @@ class TaskScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   bool isCompleted = index < 6;
                   return ListTile(
-                    leading: Icon(
-                      isCompleted
-                          ? Icons.check_circle
-                          : Icons.radio_button_unchecked,
-                      color: isCompleted ? Colors.green : Colors.grey,
+                    leading: Padding(
+                      padding: const EdgeInsets.only(right:5 ),
+                      child: Icon(
+                        isCompleted
+                            ? Icons.library_books_outlined
+                            : Icons.library_books_outlined,
+                        color: isCompleted ? Colors.green : Colors.grey,
+                      ),
                     ),
                     title: Text('sub-task description'),
                     subtitle: Text('2 hours'),
+                    
                   );
-                },
+
+},
               ),
+              
             ),
+
           ],
         ),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
-        notchMargin: 8.0,
+        notchMargin: 16,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home_outlined,size: 30,),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.grid_view),
+              icon: Icon(Icons.grid_view_outlined,size: 30,),
               onPressed: () {},
             ),
-            SizedBox(width: 48), // Space for the FAB
+            SizedBox(width: 90),
             IconButton(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.person_outline,size: 30,),
+              onPressed: () {},
+            ),
+
+
+            SizedBox(width: 0),
+            IconButton(
+              icon: Icon(Icons.settings,size: 25,),
               onPressed: () {},
             ),
           ],
@@ -86,6 +109,7 @@ class TaskScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.add),
+
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
